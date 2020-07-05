@@ -16,24 +16,12 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var Evaluation: UILabel!
     @IBOutlet weak var StartDate:    UILabel!
     
-    @IBOutlet weak var OpenInSafari: UIButton!
     
-    @IBAction func OpenInSafari(_ sender: Any) {
-        let githubURL: String = "https://api.themoviedb.org/3/movie/\(searchView.movies[searchView.index]["id"]!)?api_key=e2c0f4b151ce58888ccc6bf509b249dd"
-        
-        let url = URL(string:githubURL)
-        if( UIApplication.shared.canOpenURL(url!) ) {
-            UIApplication.shared.open(url!)
-        }
-    }
     
     var searchView: ViewController!
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        OpenInSafari.layer.cornerRadius = 10.0
-
         let movie = searchView.movies[searchView.index]
         
         OriginalTitle.text     = "オリジナルタイトル: \(movie["original_title"] as? String ?? "")"
