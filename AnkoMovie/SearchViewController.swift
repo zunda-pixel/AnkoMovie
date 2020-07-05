@@ -44,8 +44,6 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         word = searchBar.text!
         
         if word.count != 0 {
-            //https://api.themoviedb.org/3/search/movie?api_key= &query=<search_query>
-            //https://api.themoviedb.org/3/movie/now_playing?api_key
             url = "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&query=\(word)"
             guard let url: URL = URL(string: url) else {
                 print("URL not constructed")
