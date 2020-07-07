@@ -22,12 +22,13 @@ class MovieDetailViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let movie = searchView.movies[searchView.index]
         
-        OriginalTitle.text     = "オリジナルタイトル: \(movie["original_title"] as? String ?? "")"
+        OriginalTitle.text = "オリジナルタイトル: \(movie["original_title"] as? String ?? "")"
         Evaluation.text  = "評価: \(movie["vote_average"]! as? String ?? "zero")"
-        print(movie["vote_average"]!)
         StartDate.text     = "開始日: \(movie["release_date"] as? String ?? "")"
+        
         getImage()
         
     }
