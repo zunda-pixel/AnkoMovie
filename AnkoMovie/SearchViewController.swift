@@ -72,7 +72,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
         let movie = movies[indexPath.row]
-        cell.textLabel?.text = movie["title"] as? String ?? ""
+        cell.setCell(cell, movie)
         return cell
     }
     

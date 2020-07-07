@@ -13,7 +13,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var ProfileImage:  UIImageView!
     @IBOutlet weak var TitleLabel:    UILabel!
     @IBOutlet weak var OriginalTitle:    UILabel!
-    @IBOutlet weak var Evaluation: UILabel!
     @IBOutlet weak var StartDate:    UILabel!
     
     
@@ -26,7 +25,6 @@ class MovieDetailViewController: UIViewController {
         let movie = searchView.movies[searchView.index]
         
         OriginalTitle.text = "オリジナルタイトル: \(movie["original_title"] as? String ?? "")"
-        Evaluation.text  = "評価: \(movie["vote_average"]! as? String ?? "zero")"
         StartDate.text     = "開始日: \(movie["release_date"] as? String ?? "")"
         
         getImage()

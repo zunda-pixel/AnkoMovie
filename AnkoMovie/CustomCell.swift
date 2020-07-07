@@ -8,5 +8,7 @@
 import UIKit
 
 class CustomCell: UITableViewCell{
-    
+    func setCell(_ cell: UITableViewCell, _ movie: [String: Any]) -> Void{
+        cell.textLabel?.text = movie["title"] as? String ?? ""
+    }
 }
